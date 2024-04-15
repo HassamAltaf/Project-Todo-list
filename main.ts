@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import inquirer from "inquirer";
+import chalk from "chalk";
 
 let todos: string[] = [];
 let loop = true;
@@ -27,15 +28,15 @@ while(loop){
     if(Todo){
         todos.push(Todo)
     }else{
-        console.log("Please add correct input")
+        console.log(chalk.bgCyanBright.black("Please add correct input!"))
     }
 }
 
 if(todos.length > 0){
-    console.log("Your Todo List is: ")
+    console.log(chalk.bgCyan.black("Your Todo List is: "))
     todos.forEach(todo => {
-      console.log(todo)  
+      console.log(chalk.bgCyanBright.black(todo))  
     });
 }else{
-    console.log("You did not add todo or todo not found!")
+    console.log(chalk.bgCyan.black("You did not add todo or todo not found!"))
 }
